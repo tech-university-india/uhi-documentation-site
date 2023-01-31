@@ -10,16 +10,18 @@ const projectConfig = require('./projectConfig');
 const config = {
   title: projectConfig.siteTitle,
   tagline: projectConfig.siteTagline,
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://tech-university-india.github.io',
+  baseUrl: '/uhi-documentation-site/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/uhi-logo.png',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'tech-university-india', // Usually your GitHub org/user name.
+  projectName: 'uhi-documentation-site', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
+  trailingSlash: false,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
