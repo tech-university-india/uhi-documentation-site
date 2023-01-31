@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuhe_docs=self.webpackChunkuhe_docs||[]).push([[489],{9271:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/uhi-documentation-site/blog/tags/facebook","allTagsPath":"/uhi-documentation-site/blog/tags","count":1}')}}]);

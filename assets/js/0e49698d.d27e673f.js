@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkuhe_docs=self.webpackChunkuhe_docs||[]).push([[95],{2410:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/uhi-documentation-site/blog/tags/docusaurus","allTagsPath":"/uhi-documentation-site/blog/tags","count":4}')}}]);
