@@ -1,14 +1,13 @@
 {
     "openapi": "3.0.0",
     "info": {
-      "title": "Sample Access Code Flow OAuth2 Project",
-      "description": "This is an example of using OAuth2 Access Code Flow in a specification to describe security to your API.",
-      "version": "1.0.0"
+      "title": "API flow from client to backend server",
+      "description": "This is an example of using OAuth2 Access Code Flow in a specification to describe security to your API."
     },
     "servers": [
       {
         "url": "https://virtserver.swaggerhub.com/SaatwikRishi/uhi-api/1.0.0",
-        "description": "SwaggerHub API Auto Mocking"
+        "description": "UHA Backend Endpoint"
       }
     ],
     "security": [
