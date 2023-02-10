@@ -17,7 +17,3 @@ sidebar_position: 2
 ### Using Patient's Aadhaar and Aadhaar Registered Mobile Number
 
 ![Using Aadhaar Registered Mobile Number](/img/abdm_onboarding_patient_aadhaar.svg)
-
-### Using Patient's Mobile Number
-
-![Using Aadhaar Registered Mobile Number](/img/abdm_onboarding_patient_mobile.svg)
