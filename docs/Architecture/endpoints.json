@@ -222,12 +222,134 @@
           "User Onboarding"
         ]
       }
+    },
+    "/auth/users/login/": {
+      "post": {
+        "summary": "Login for an existing user",
+        "description": "This operation is for logging in an existing user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "loginType": "MOBILE / ABHA",
+                  "credentials": "98765434567",
+                  "yearOfBirth": "2001 ( FOR ABHA LOGIN )",
+                  "authMethod": "AADHAAR_OTP / MOBILE_OTP ( FOR ABHA LOGIN )"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "OTP sent",
+                    "data": {
+                        "txnId": "5782f981-678f-4cf0-9bfc-7a5688f32b10"
+                    }
+                }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Login"
+        ]
+      }
+    },
+    "/auth/users/login/verifyOtp": {
+      "post": {
+        "summary": "Verify Otp while logging in",
+        "description": "This operation is for verifying OTP for an existing user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "otp":"495187",
+                  "txnId":"5782f981-678f-4cf0-9bfc-7a5688f32b10",
+                  "loginType": "MOBILE"
+              }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "OTP verified",
+                    "data": {
+                        "txnId": "5782f981-678f-4cf0-9bfc-7a588f32b10",
+                        "token": "...some JWT Token",
+                        "mobileLinkedHid": [
+                            {
+                                "healthIdNumber": "91-1311-6512-2234",
+                                "healthId": "hi@sbx",
+                                "name": "Hi Singh",
+                                "profilePhoto": null,
+                                "phrAddress": null
+                            }
+                        ]
+                    }
+                }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Login"
+        ]
+      }
+    },
+    "/auth/users/login/resendOtp": {
+      "post": {
+        "summary": "Resend OTP for an existing user",
+        "description": "This operation is for resending OTP for an existing user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "txnId": "a174bbef-86c3-4d3c-a4bc-b5a4ccb1999",
+                  "authMethod": "AADHAAR_OTP / MOBILE_OTP"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "User Login"
+        ]
+      }
     }
   },
   "tags": [
     {
       "name": "User Onboarding",
       "description": "Operations related to user onboarding"
+    },
+    {
+      "name": "User Login",
+      "description": "Operations related to user login"
     }
   ],
   "components": {
