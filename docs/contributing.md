@@ -80,8 +80,24 @@ Please include the following:
 
 Please include the following when raising an issue about a bug:
 
-1. **Bug Description**: Please include how you encountered the bug, which steps led to that bug happening, and the browser/environment under which you were using the software. Being as specific as possible about the events that led to the bug happening and providing any other possible diagnostic information will make it easier to reproduce, debug and fix the bug.
+1. **Bug Description**: Please include a description of the bug, how you encountered the bug (screenshots are appreciated), which steps led to that bug happening, and the browser/environment under which you were using the software. Being as specific as possible about the events that led to the bug happening and providing any other possible diagnostic information will make it easier to reproduce, debug and fix the bug.
 
 2. **Output received (current output)**: What is the result/output that you are currently receiving (as a result of the bug)?
 
 3. **Expected output**: What is the expected output (the output that one should receive if the bug is fixed)?
+
+## Raising Pull Requests (PRs)
+
+After working on a feature, chore, or fix, please open a pull request with your changes from your branch to the main branch of the repository you are contributing to.
+
+The PR requires approval by two maintainers, after which it can be merged. The merge will be made by the maintainers with the squash and merge strategy.
+
+If there are any issues with the PR, the maintainers will leave comments while reviewing. Please feel free to tag the maintainers for any help/clarification required, or if your PR is getting stale (open for too many days without a review).
+
+**Note:** Before opening a PR, please ensure that you have run the linter and fixed any linting issues, and that all tests are working.
+
+### Title and description of PRs
+
+The title convention for the PRs is same as that for commit messages (see above). Please also include a brief description of what the PR does and include a link to the issue(s) if there is/are any corresponding or relevant GitHub issue(s) for the changes made by the PR.
+
+Your contributions are welcome!
