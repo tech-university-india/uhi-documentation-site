@@ -57,10 +57,14 @@ Please ensure you run the linter before committing and opening pull requests.
 
 For UI features/pages, the process is to first create a design (preferably in Figma), and then start with its implementation.
 
+![Frontend Development Cycle](/img/fe_sdlc.png)
+
 ### Backend
 
 For APIs and API endpoints, the process is to first create an API specification using the OpenAPI specification (and a swagger page also whenever possible). After the API specification is approved, we proceed to the implementation. 
 Please add tests whenever any changes are made to the backend implementations and ensure that existing tests run properly before opening a PR.
+
+![Backend Development Cycle](/img/be_sdlc.png)
 
 ## Raising Issues
 
