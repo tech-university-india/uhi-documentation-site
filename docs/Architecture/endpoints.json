@@ -1,0 +1,373 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API flow from client to backend server",
+    "description": "This is an example of using OAuth2 Access Code Flow in a specification to describe security to your API."
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/SaatwikRishi/uhi-api/1.0.0",
+      "description": "UHA Backend Endpoint"
+    }
+  ],
+  "security": [
+    {
+      "accessCode": [
+        "read",
+        "write"
+      ]
+    }
+  ],
+  "paths": {
+    "/api/onboarding/users/generateAadhaarOTP": {
+      "post": {
+        "summary": "Generate Aadhar OTP for new user (Init step)",
+        "description": "This operation is for initializing the user registration jouney. It generates an OTP for the user's aadhar number verification, which is to be used in the next step.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "aadhaarNumber": 123456789123
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the transaction ID and the mobile number of the user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "txnId": "tfnfkfb-fff",
+                    "mobileNumber": "123456789123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Onboarding"
+        ]
+      }
+    },
+    "/api/onboarding/users/generateMobileOTP": {
+      "post": {
+        "summary": "Generate Mobile OTP for new user (Init step)",
+        "description": "This step is to initialize new user registration with mobile number verification. It generates an OTP for the user's mobile number verification, which is to be used in the next step.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "mobileNumber": {
+                    "type": "string",
+                    "description": "Mobile number of the user",
+                    "example": "123456789123",
+                    "required": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the txnId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "txnId": "tfnfkfb-fff"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Onboarding"
+        ]
+      }
+    },
+    "/api/onboarding/users/verifyAadhaarOTP": {
+      "post": {
+        "summary": "Verify Aadhar OTP for new user",
+        "description": "This operation is for verifying the user's aadhar number. It verifies the OTP generated in the previous step.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "txnId": {
+                    "type": "string",
+                    "description": "Transaction ID for the OTP generation",
+                    "example": "tfnfkfb-fff",
+                    "required": true
+                  },
+                  "otp": {
+                    "type": "string",
+                    "description": "OTP generated for the user's aadhar number",
+                    "example": 123456,
+                    "required": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the transaction ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "txnId": "tfnfkfb-fff"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Onboarding"
+        ]
+      }
+    },
+    "/api/onboarding/users/verifyMobileOTP": {
+      "post": {
+        "summary": "Verify Mobile OTP for new user",
+        "description": "This operation is for verifying the user's mobile number. It verifies the OTP generated in the previous step.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "txnId": {
+                    "type": "string",
+                    "description": "Transaction ID for the OTP generation",
+                    "example": "tfnfkfb-fff",
+                    "required": true
+                  },
+                  "otp": {
+                    "type": "string",
+                    "description": "OTP generated for the user's aadhar number",
+                    "example": 123456,
+                    "required": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns the transaction ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "txnId": "tfnfkfb-fff"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Onboarding"
+        ]
+      }
+    },
+    "/api/onboarding/users": {
+      "post": {
+        "summary": "Create new user",
+        "description": "This operation is for creating a new user. It creates a new user in the ABDM database.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "email": "123",
+                  "firstName": "F",
+                  "middleName": "M",
+                  "lastName": "L",
+                  "healthID": "f",
+                  "password": "",
+                  "profilePhoto": "",
+                  "txnId": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "User Onboarding"
+        ]
+      }
+    },
+    "/auth/users/login/": {
+      "post": {
+        "summary": "Login for an existing user",
+        "description": "This operation is for logging in an existing user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "loginType": "MOBILE / ABHA",
+                  "credentials": "98765434567",
+                  "yearOfBirth": "2001 ( FOR ABHA LOGIN )",
+                  "authMethod": "AADHAAR_OTP / MOBILE_OTP ( FOR ABHA LOGIN )"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "OTP sent",
+                    "data": {
+                        "txnId": "5782f981-678f-4cf0-9bfc-7a5688f32b10"
+                    }
+                }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Login"
+        ]
+      }
+    },
+    "/auth/users/login/verifyOtp": {
+      "post": {
+        "summary": "Verify Otp while logging in",
+        "description": "This operation is for verifying OTP for an existing user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "otp":"495187",
+                  "txnId":"5782f981-678f-4cf0-9bfc-7a5688f32b10",
+                  "loginType": "MOBILE"
+              }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "example": {
+                    "message": "OTP verified",
+                    "data": {
+                        "txnId": "5782f981-678f-4cf0-9bfc-7a588f32b10",
+                        "token": "...some JWT Token",
+                        "mobileLinkedHid": [
+                            {
+                                "healthIdNumber": "91-1311-6512-2234",
+                                "healthId": "hi@sbx",
+                                "name": "Hi Singh",
+                                "profilePhoto": null,
+                                "phrAddress": null
+                            }
+                        ]
+                    }
+                }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "User Login"
+        ]
+      }
+    },
+    "/auth/users/login/resendOtp": {
+      "post": {
+        "summary": "Resend OTP for an existing user",
+        "description": "This operation is for resending OTP for an existing user.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "example": {
+                  "txnId": "a174bbef-86c3-4d3c-a4bc-b5a4ccb1999",
+                  "authMethod": "AADHAAR_OTP / MOBILE_OTP"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "User Login"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "User Onboarding",
+      "description": "Operations related to user onboarding"
+    },
+    {
+      "name": "User Login",
+      "description": "Operations related to user login"
+    }
+  ],
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "accessCode": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "http://example.com/oauth/auth",
+            "tokenUrl": "http://example.com/oauth/token",
+            "scopes": {
+              "write": "allows modifying resources",
+              "read": "allows reading resources"
+            }
+          }
+        }
+      }
+    }
+  }
+}
