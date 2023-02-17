@@ -251,9 +251,15 @@
                   "example": {
                     "message": "OTP sent",
                     "data": {
+<<<<<<< HEAD
                       "txnId": "5782f981-678f-4cf0-9bfc-7a5688f32b10"
                     }
                   }
+=======
+                        "txnId": "5782f981-678f-4cf0-9bfc-7a5688f32b10"
+                    }
+                }
+>>>>>>> b94099215ba08cb2d40fb49c73d0a91ef5adff96
                 }
               }
             }
@@ -274,10 +280,17 @@
             "application/json": {
               "schema": {
                 "example": {
+<<<<<<< HEAD
                   "otp": "495187",
                   "txnId": "5782f981-678f-4cf0-9bfc-7a5688f32b10",
                   "loginType": "MOBILE"
                 }
+=======
+                  "otp":"495187",
+                  "txnId":"5782f981-678f-4cf0-9bfc-7a5688f32b10",
+                  "loginType": "MOBILE"
+              }
+>>>>>>> b94099215ba08cb2d40fb49c73d0a91ef5adff96
               }
             }
           }
