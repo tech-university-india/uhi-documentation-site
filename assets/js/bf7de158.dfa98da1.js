@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkuhe_docs=self.webpackChunkuhe_docs||[]).push([[916],{8378:e=>{e.exports=JSON.parse('{"permalink":"/uhi-documentation-site/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
