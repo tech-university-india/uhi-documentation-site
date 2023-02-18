@@ -25,3 +25,9 @@ We use a relational database (PostgreSQL) for storing relevant information.
 
 The frontend and the backend are connected with a RESTful API.
 The backend of our application further interacts with the APIs of ABDM to provide relevant functionalities.
+
+## Service architecture
+We have two services in our application:
+- The **Onboarding Service** is responsible for handling the registration of users (patients)
+- The **User Service** is responsible for handling the user management of the application.
+![Service Architecture](./service-architecture.drawio.png)

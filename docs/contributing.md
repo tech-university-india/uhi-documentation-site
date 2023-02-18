@@ -18,7 +18,7 @@ Commits should be of complete, preferably working code (if not, they should be s
 Commit messages follow the following convention:
 
 ```
-feat/chore/fix: <descriptive message in present imperative, should start with lowercase characters if possible>
+feat/chore/fix/docs: <descriptive message in present imperative, should start with lowercase characters if possible>
 ```
 
 For example, these are valid/acceptable commit messages that follow the convention:
@@ -42,6 +42,8 @@ Added close button
 2. **fix**: This indicates a commit that intends to fix a part, appearance or functionality of an existing feature or capability of the asset.
 
 3. **chore**: Any commit that does not fall under the **fix** and **feat** categories falls under this category. This includes writing tests, infrastructure scripts/setups, refactoring, etc.
+
+4. **docs**: This indicates that the commit is documenting new feature/ modifying docs for existing feature. 
 
 ### Linting
 
