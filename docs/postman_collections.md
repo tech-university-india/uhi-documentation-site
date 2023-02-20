@@ -19,6 +19,6 @@ Given below are the links for collection as well as environment in json format t
 
 [Our Asset Postman Collection ](/postman_collection/our_asset/user_onboarding/Our_Service_api.postman_collection.json)
 
-[Our Asset Postman Environment](/static/postman_collection/our_asset/user_onboarding/Our_Service_api.postman_collection.json)
+[Our Asset Postman Environment](/postman_collection/our_asset/user_onboarding/ABHA_reg.postman_environment.json)
 
 Note: To download the json files hover-over hyperlinks and click on save as.
