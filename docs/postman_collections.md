@@ -21,4 +21,16 @@ Given below are the links for collection as well as environment in json format t
 
 [Our Asset Postman Environment](/postman_collection/our_asset/user_onboarding/ABHA_reg.postman_environment.json)
 
+### Registration Using Mobile Number
+
+Given below are the links for collection as well as environment in json format to test out api's and to furtur help your development process.
+
+[ABDM Postman Collection](/postman_collection/ABDM/user_onboarding_with_mobile/RegistrationWithMobileABDM.postman_collection.json)
+
+[ABDM Postman Environment](/postman_collection/ABDM/user_onboarding_with_mobile/ABDMRegistrationWithMobile.postman_environment.json)
+
+[Our Asset Postman Collection ](/postman_collection/our_asset/user_onboarding_with_mobile/RegistrationWithMobileOurAsset.postman_collection.json)
+
+[Our Asset Postman Environment](/postman_collection/our_asset/user_onboarding_with_mobile/OurAssetRegistrationWithMobile.postman_environment.json)
+
 Note: To download the json files hover-over hyperlinks and click on save as.
