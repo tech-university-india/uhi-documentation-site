@@ -27,7 +27,11 @@ The frontend and the backend are connected with a RESTful API.
 The backend of our application further interacts with the APIs of ABDM to provide relevant functionalities.
 
 ## Service architecture
-We have two services in our application:
-- The **Onboarding Service** is responsible for handling the registration of users (patients)
-- The **User Service** is responsible for handling the user management of the application.
+We have three services in our application:
+- The **Onboarding Service** is responsible for handling registration of users (patients)
+- The **User Service** is responsible for handling user management.
+- The **ABDM Adapter** is responsible for handling interactions with ABDM components mainly dealing with gateway validation and request validation (ABDM request validation has misleading messages).
 ![Service Architecture](./service-architecture.drawio.png)
+
+
+
