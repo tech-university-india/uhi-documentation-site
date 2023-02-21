@@ -138,7 +138,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"otp\": 384032\r\n}"
+							"raw": "{\r\n    \"otp\": \"955227\"\r\n}"
 						},
 						"url": {
 							"raw": "{{baseURL}}{{basePath}}/users/verifyOTP",
@@ -320,7 +320,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": {{userEmail}}\r\n}"
+							"raw": "{\r\n    \"email\": {{userEmail}},\r\n    \"password\": {{userPassword}}\r\n}"
 						},
 						"url": {
 							"raw": "{{baseURL}}{{basePath}}/users/createHeathIDPreVerifiedNumber",
