@@ -10,7 +10,7 @@ This section presents a brief overview of our architecture and design choices.
 
 The application consists of a frontend and a backend, along with a database. The backend of our application interacts with the ABDM components (like the Gateway, the Consent Manager and the like) through API calls on exposed endpoints.
 
-![Architecture Overview](/img/architecture_overview.svg)
+![Architecture Overview](./architecture_overview.drawio.png)
 
 ## Technologies/Design Choices
 

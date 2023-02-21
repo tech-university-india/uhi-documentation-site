@@ -48,4 +48,4 @@ The recommended steps and requirements are detailed below (as taken from the [ND
 
 Our assets provide an easy to use layer above the ABDM infrastructure with the primary purpose of increasing the number of patients and healthcare facilities registered with the ABDM.
 
-![Where does it fit in](/img/onboarding_assets_usecase.svg)
+![Where does it fit in](./onboarding_assets_usecase.drawio.png)
