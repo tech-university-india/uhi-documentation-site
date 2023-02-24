@@ -11,4 +11,4 @@ The database schema is as follows:
 
 ## For Data of Healthcare Professionals
 
-![Database Tables for Healthcare Professionals](/img/healthcare_proff.svg)
+![Database Tables for Healthcare Professionals](./healthcare_proff.drawio.png)

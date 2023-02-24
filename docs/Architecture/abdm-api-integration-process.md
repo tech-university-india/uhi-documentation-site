@@ -10,10 +10,10 @@ sidebar_position: 2
 
 ## For onboarding the Health Professional
 
-![Onboarding the ABDM](/img/hpr_api_flow.svg)
+![Onboarding the ABDM](./hpr_api_flow.drawio.png)
 
 ## For onboarding the Patient
 
 ### Using Patient's Aadhaar and Aadhaar Registered Mobile Number
 
-![Using Aadhaar Registered Mobile Number](/img/abdm_onboarding_patient_aadhaar.svg)
+![Using Aadhaar Registered Mobile Number](./abdm_onboarding_patient_aadhaar.drawio.png)
