@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "e75da62d-4aed-4849-8ea1-918d589e92fd",
+		"name": "ABDM user registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25281051"
+	},
+	"item": [
+		{
+			"name": "RegistrationWithAadhaar",
+			"item": [
+				{
+					"name": "/aadhaar/generateOtp",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"value3 = jsonData.txnId\r",
+									"console.log(value3)\r",
+									"pm.environment.set(\"TxnId\",value3);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aadhaar\": {{aadhaarNumber}}\r\n}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/generateOtp",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"generateOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aadhaar/resendAadhaarOtp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"txnId\": {{TxnId}}}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/resendAadhaarOtp",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"resendAadhaarOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aadhaar/verifyOTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":268999,\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/verifyOTP",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"verifyOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/registration/aadhaar/checkAndGenerateMobileOTP Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"mobile\": {{mobileNumber}}, \"txnId\": {{txnId}}}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v2/registration/aadhaar/checkAndGenerateMobileOTP",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v2",
+								"registration",
+								"aadhaar",
+								"checkAndGenerateMobileOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aadhaar/verifyMobileOTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": \"777106\",\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/verifyMobileOTP",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"verifyMobileOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aadhaar/createHealthIdWithPreVerified",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"value2 = jsonData.token\r",
+									"console.log(value2)\r",
+									"pm.environment.set(\"X-Token\",value2);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": {{email}},\r\n    \"firstName\": {{firstName}},\r\n    \"healthId\": {{healthId}},\r\n    \"lastName\": {{lastName}},\r\n    \"middleName\": {{middleName}},\r\n    \"password\": {{password}},\r\n    \"profilePhoto\": {{profilePhotot}},\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/createHealthIdWithPreVerified",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"createHealthIdWithPreVerified"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aadhaar/generateMobileOTP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\": {{mobileNumber}},\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/generateMobileOTP",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"generateMobileOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/aadhaar/createHealthIdWithAadhaarOtp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{AccessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": {{email}},\r\n    \"firstName\": {{firstName}},\r\n    \"lastName\": {{lastName}},\r\n    \"middleName\": {{middleName}},\r\n    \"mobile\": {{mobileNumber}},\r\n    \"otp\": 812306,\r\n    \"password\": {{password}},\r\n    \"profilePhoto\": {{profliePhoto}},\r\n    \"username\": {{username}}\r\n}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/createHealthIdWithAadhaarOtp",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"createHealthIdWithAadhaarOtp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/registration/aadhaar/verifyBio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{AccessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"aadhaar\": {{aadhaarNumber}}, \"bioType\": {{bodyType}}, \"pid\": {{pid}}}"
+						},
+						"url": {
+							"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/aadhaar/verifyBio",
+							"host": [
+								"{{BaseURI}}"
+							],
+							"path": [
+								"{{BasePath}}",
+								"v1",
+								"registration",
+								"aadhaar",
+								"verifyBio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
