@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "4c8a80ab-dc06-43ba-a5c7-ad77932f39bf",
+		"name": "RegistrationWithMobileABDM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16227710"
+	},
+	"item": [
+		{
+			"name": "/mobile/generateOtp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"value3 = jsonData.txnId\r",
+							"console.log(value3)\r",
+							"pm.environment.set(\"TxnId\",value3);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\": {{mobileNumber}}\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/mobile/generateOtp",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"v1",
+						"registration",
+						"mobile",
+						"generateOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/mobile/resendOtp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/api/v1/registration/mobile/resendOtp",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"api",
+						"v1",
+						"registration",
+						"mobile",
+						"resendOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/mobile/verifyOtp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": 812884,\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/mobile/verifyOtp",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"v1",
+						"registration",
+						"mobile",
+						"verifyOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/mobile/createHealthId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"{{address}}\",\r\n    \"dayOfBirth\": {{dayOfBirth}},\r\n    \"districtCode\": {{districtCode}},\r\n    \"email\": \"{{email}}\",\r\n    \"firstName\": \"{{firstName}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"healthId\": \"{{healthId}}\",\r\n    \"lastName\": \"{{lastName}}\",\r\n    \"middleName\": \"{{middleName}}\",\r\n    \"monthOfBirth\": \"{{monthOfBirth}}\",\r\n    \"name\": \"{{name}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"pincode\": \"{{pincode}}\",\r\n    \"profilePhoto\": \"{{profilePhoto}}\",\r\n    \"stateCode\": {{stateCode}},\r\n    \"subdistrictCode\": \"{{subdistrictCode}}\",\r\n    \"token\": \"{{token}}\",\r\n    \"txnId\": \"{{TxnId}}\",\r\n    \"villageCode\": \"{{villageCode}}\",\r\n    \"wardCode\": \"{{wardCode}}\",\r\n    \"yearOfBirth\": {{yearOfBirth}}\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/v1/registration/mobile/createHealthId",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"v1",
+						"registration",
+						"mobile",
+						"createHealthId"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

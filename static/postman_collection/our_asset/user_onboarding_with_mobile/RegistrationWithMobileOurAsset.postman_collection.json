@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "90fe7d97-a6f6-4111-852d-58fac3c5ca5c",
+		"name": "RegistrationWithMobileOurAsset",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16227710"
+	},
+	"item": [
+		{
+			"name": "/users/mobile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"value3 = jsonData.txnId\r",
+							"console.log(value3)\r",
+							"pm.environment.set(\"TxnId\",value3);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobile\": {{mobileNumber}}\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/users/mobile",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"users",
+						"mobile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/mobile/resendOtp",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/users/mobile/resendOtp",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"users",
+						"mobile",
+						"resendOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/mobile/verifyOtp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": 812884,\r\n    \"txnId\": \"{{TxnId}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/users/mobile/verifyOtp",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"users",
+						"mobile",
+						"verifyOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/mobile/createHealthId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{AccessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{AccessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"{{address}}\",\r\n    \"dayOfBirth\": {{dayOfBirth}},\r\n    \"districtCode\": {{districtCode}},\r\n    \"email\": \"{{email}}\",\r\n    \"firstName\": \"{{firstName}}\",\r\n    \"gender\": \"{{gender}}\",\r\n    \"healthId\": \"{{healthId}}\",\r\n    \"lastName\": \"{{lastName}}\",\r\n    \"middleName\": \"{{middleName}}\",\r\n    \"monthOfBirth\": \"{{monthOfBirth}}\",\r\n    \"name\": \"{{name}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"pincode\": \"{{pincode}}\",\r\n    \"profilePhoto\": \"{{profilePhoto}}\",\r\n    \"stateCode\": {{stateCode}},\r\n    \"subdistrictCode\": \"{{subdistrictCode}}\",\r\n    \"token\": \"{{token}}\",\r\n    \"txnId\": \"{{TxnId}}\",\r\n    \"villageCode\": \"{{villageCode}}\",\r\n    \"wardCode\": \"{{wardCode}}\",\r\n    \"yearOfBirth\": {{yearOfBirth}}\r\n}"
+				},
+				"url": {
+					"raw": "{{BaseURI}}/{{BasePath}}/users/mobile/createHealthId",
+					"host": [
+						"{{BaseURI}}"
+					],
+					"path": [
+						"{{BasePath}}",
+						"users",
+						"mobile",
+						"createHealthId"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
